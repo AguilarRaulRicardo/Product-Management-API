@@ -18,4 +18,6 @@ urlpatterns = [
     path('delete_product/<int:pk>', views.delete_product),
     path('delete_brand/<int:pk>', views.delete_brand),
     path('delete_category/<int:pk>', views.delete_Category),
+    #search
+    path('search_product', views.search_product),
 ]

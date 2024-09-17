@@ -26,7 +26,10 @@ class BrandSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
         read_only_fields = ['id']
 
-#class ReviewSerializer(serializers.ModelSerializer):
-#    class Meta:
-#        m
-
+class SearchSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=50,required = False )
+    min_price = serializers.IntegerField(required = False)
+    ma_price = serializers.IntegerField(required = False)
+    category = serializers.IntegerField(required = False) 
+    brand = serializers.IntegerField(required = False)
+    #agregar luego el filtro por resenas
