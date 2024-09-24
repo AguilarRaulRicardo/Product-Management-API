@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Category, Brand
+from .models import Product, Category, Brand, Review
 
 class ProductSerializer(serializers.ModelSerializer):
     category =  serializers.PrimaryKeyRelatedField(
@@ -33,3 +33,10 @@ class SearchSerializer(serializers.Serializer):
     category = serializers.IntegerField(required = False) 
     brand = serializers.IntegerField(required = False)
     #agregar luego el filtro por resenas
+
+class ReviewSerializer(serializers.ModelSerializer):
+    product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all())
+    class Meta:
+        model = Review
+        fields = ['id','product', 'rating', 'comment', 'create_at', 'user_id']
+        read_only_fields = ['id', 'create_at']

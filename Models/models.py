@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
@@ -16,7 +14,6 @@ class Product(models.Model):
     description = models.TextField()
     price = models.FloatField()
     Stock = models.IntegerField()
-    #img = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -25,3 +22,10 @@ class Review(models.Model):
     rating = models.IntegerField()
     comment = models.CharField(max_length=250)
     create_at = models.DateTimeField(auto_now_add=True)
+    user_id= models.IntegerField()
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['product', 'user_id'], name='unique_review_per_product')
+        ]
+    
