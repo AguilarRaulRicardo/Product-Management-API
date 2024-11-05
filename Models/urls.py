@@ -9,7 +9,8 @@ urlpatterns = [
     path('create_review', views.create_review),
     
     #read
-    path('list_product', views.list_product),
+    path('list_products', views.list_products),
+    path('list_product/<int:id>', views.list_product), 
     path('list_brand', views.list_brand),
     path('list_category', views.list_category),
     path('list_review/<int:pk>', views.list_reviews),
@@ -18,6 +19,7 @@ urlpatterns = [
     path('update_category/<int:pk>', views.update_category),
     path('update_brand/<int:pk>', views.update_brand),
     path('update_review/<int:pk>', views.update_review),
+    path('stock_decrement/<int:pk>', views.stock_decrement),
     #delete
     path('delete_product/<int:pk>', views.delete_product),
     path('delete_brand/<int:pk>', views.delete_brand),
