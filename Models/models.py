@@ -13,7 +13,8 @@ class Product(models.Model):
     name = models.CharField(max_length=50, null=False)
     description = models.TextField()
     price = models.FloatField()
-    Stock = models.IntegerField()
+    stock = models.IntegerField()
+    image = models.CharField(max_length=150, null=False)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -28,4 +29,3 @@ class Review(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['product', 'user_id'], name='unique_review_per_product')
         ]
-    

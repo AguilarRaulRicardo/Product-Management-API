@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=50)),
                 ('description', models.TextField()),
                 ('price', models.FloatField()),
-                ('Stock', models.IntegerField()),
+                ('stock', models.IntegerField()),
                 ('create_at', models.DateTimeField(auto_now_add=True)),
                 ('update_at', models.DateTimeField(auto_now=True)),
                 ('brand', models.ManyToManyField(to='Models.brand')),
