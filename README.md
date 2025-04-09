@@ -1,6 +1,6 @@
 # Product Management API
 
-This is a RESTful API developed with Django and Django REST Framework that allows for the creation and management of products, categories, brands, and reviews. It also includes functionalities for user management.
+This is a RESTful API developed with Django and Django REST Framework that allows for the creation and management of products, categories and brands. It also includes functionalities for user management.
 
 ## Features
 
